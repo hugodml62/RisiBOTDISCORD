@@ -19,6 +19,8 @@ bot.on('guildMemberAdd', member => {
 const ban = require('./kick et ban/ban');
 require('./embed/RichEmbed');
 
+const token = process.env.token;
+
 bot.on('message', function (message){
     if (ban.match(message)){
         return ban.action(message)
@@ -40,5 +42,5 @@ bot.on('message', msg => {
 
 });
 
-bot.login(cfg.token); //a garder en version desktop
+bot.login(token); //a garder en version desktop
 bot.login(token); //a garder en version heroku
